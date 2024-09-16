@@ -1,0 +1,53 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Estilo para el título principal */
+h1 {
+    color: #ffffff; /* Color del texto del título */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 80%;
+    max-width: 800px; /* Ancho máximo de la tabla */
+    border-collapse: collapse;
+    background-color: #1e1e1e; /* Color oscuro para la tabla */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para la tabla */
+}
+
+/* Estilo para las celdas del encabezado de la tabla */
+th {
+    background-color: #333333; /* Color de fondo para el encabezado */
+    padding: 12px;
+    text-align: left;
+    color: #ffffff; /* Color del texto del encabezado */
+}
+
+/* Estilo para las celdas del cuerpo de la tabla */
+td {
+    padding: 12px;
+    color: #ffffff; /* Color del texto en las celdas */
+}
+
+/* Estilo para las filas alternas en la tabla */
+tbody tr:nth-child(even) {
+    background-color: #2a2a2a; /* Color de fondo para filas alternas */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #1e1e1e; /* Color de fondo para las filas impares */
+}

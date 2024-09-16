@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": "b157",
+      "nombres": "Camilo brian",
+      "apellidos": "Giraldo Perez",
+      "Identificacion": "1122924089",
+      "numero": "3225967923",
+      "correo": "cuartasisabela113@gmailcom",
+      "firma1": "jarvi",
+      "numero1": "312312312",
+      "firma2": "especter",
+      "numero2": "13124323423",
+      "exprof": "si",
+      "especializacion": "civil",
+      "disponibilidad": "si",
+      "trayectoria": "toda esa monda",
+      "infoac": "toda esa monda "
+    }
+  ],
+  "login": [
+    {
+      "id": "8030",
+      "correo": "cuartasisabela113@gmailcom",
+      "contraseña": "12345"
+    },
+    {
+      "id": "3a1c",
+      "correo": "cuartasisabela113@gmailcom",
+      "contraseña": "12345"
+    }
+  ]
+}

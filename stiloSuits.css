@@ -1,0 +1,97 @@
+body {
+    background-color: #000000; 
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center; 
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    padding: 20px;
+    background-color: #333;
+}
+
+.logo {
+    margin-right: 5px; 
+}
+
+.titulo h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 50px;
+}
+
+nav.busquedas {
+    background-color: #1d1d1d;
+    padding: 7px;
+    font-size: 16px;
+}
+
+nav.busquedas .nav-link {
+    color: #e0e0e0; 
+    
+}
+
+nav.busquedas .nav-link:hover {
+    color: #fff; 
+}
+
+.carousel {
+    background-color: #000; 
+    padding: 5px; 
+}
+
+.carousel-inner img {
+    max-height: 1000px; 
+    object-fit: cover; 
+}
+
+p {
+    text-align: center; 
+    margin-bottom: 10px; 
+}
+
+.selec {
+    background-color: #000000; 
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.selec label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.selec select {
+    background-color: #333; 
+    color: white; 
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.selec button {
+    background-color: #535353; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.selec button:hover {
+    background-color: #b8b8b8; 
+}

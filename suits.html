@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stiloSuits.css"/>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <title>SUITS WEB</title>
+  </head>
+
+  <body>
+    <div class="titulo">
+        <img class="logo" src="logooo.png" width="50" alt="Logo">
+        <h1>SUITS</h1>
+      </div>
+
+    <nav class="busquedas">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="registroAbogado.html">Registro Abogados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cuadro.html">Abogados</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <img src="suits cas.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="img2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+              <img src="img3.webp" class="d-block w-100" alt="...">
+          </div>
+      </div>
+  </div>
+  <br>
+
+<div class="selec">
+  <label for="especializacion">Seleccione una especialización:</label>
+<select id="especializacion">
+    <option value="">Seleccione una opción</option>
+    <option value="penal">Derecho Penal</option>
+    <option value="civil">Derecho Civil</option>
+    <option value="laboral">Derecho Laboral</option>
+    <option value="familiar">Derecho Familiar</option>
+    <option value="mercantil">Derecho Mercantil</option>
+</select>
+<button onclick="guardarYRedirigir()">Buscar</button>
+</div>
+    <br> <br> <br>
+    <br> <br> <br>
+    
+<script>
+    function guardarYRedirigir() {
+        const especializacionSeleccionada = document.getElementById('especializacion').value;
+        
+        if (!especializacionSeleccionada) {
+            alert('Por favor, seleccione una especialización.');
+            return;
+        }
+        localStorage.setItem('especializacionSeleccionada', especializacionSeleccionada);
+        
+        window.location.href = 'ResultadoDebusqueda.html';
+    }
+</script>
+
+<footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+        <p><strong>SUITS</strong> - Soluciones Legales al Alcance de un Clic</p>
+        <p>
+            En SUITS, somos una plataforma líder en la contratación virtual de abogados. Ofrecemos acceso rápido y confiable a una red de abogados especializados en diversas áreas del derecho, incluyendo penal, civil, laboral, familiar y mercantil. Nuestra misión es conectar a clientes con profesionales legales altamente calificados, proporcionando un proceso seguro, transparente y eficiente para la resolución de problemas legales.
+        </p>
+        <p>© 2024 SUITS. Todos los derechos reservados.</p>
+        <p>
+            <a href="nosotros.html" style="color: #ccc;">Acerca de Nosotros</a> | 
+            <a href="politicaPRIV.jpeg" style="color: #ccc;">Política de Privacidad</a> | 
+            <a href="https://www.instagram.com/camil0_ccp?igsh=MXd3eGNkMnFvZHdwYg==" style="color: #ccc;">Ig Brian</a>
+            <a href="https://www.instagram.com/desiree_344?igsh=MWt4enJ5NGhtbmtraQ==" style="color: #ccc;">Ig Isabela</a>
+        </p>
+</footer>
+</body>
+</html>

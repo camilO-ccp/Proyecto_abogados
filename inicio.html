@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="iniciosecion.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+           <h1>Inicio de sesión</h1>
+            <div class="input-group">
+                <label for="username">Correo</label>
+                <input type="text" placeholder="Username" id="correo" required>
+                <i class='bx bxs-invader'></i>
+            </div>
+    
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <input type="password" placeholder="Password" required id="contraseña">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <br>
+            <button type="submit">Iniciar</button> 
+        </form>
+    </div>
+    
+    <script>
+        // Escuchamos el evento 'submit' del formulario
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    
+            // Capturar la información de los inputs
+            const correo = document.getElementById("correo").value;
+            const contraseña = document.getElementById("contraseña").value;
+    
+            // Crear un arreglo con los datos del usuario
+            const usuario = {
+                correo: correo,
+                contraseña: contraseña
+            };
+    
+            // Mostrar la información en una alerta
+            alert(`Correo: ${usuario.correo}\nContraseña: ${usuario.contraseña}`);
+    
+            // Enviar la información al servidor
+            fetch('http://localhost:3000/login', {  // Cambia esta URL a la de tu archivo JSON
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usuario)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Usuario registrado:', data);
+                // Redirigir a la página suits.html después de la respuesta del servidor
+                window.location.href = 'suits.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al registrar el usuario.');
+            });
+        });
+    </script>
+</body>
+</html> 

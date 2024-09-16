@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    <link rel="stylesheet" href="estiloGuardadoAbo.css">
+</head>
+<body>
+    <h1>Usuarios Registrados</h1>
+
+    <table id="usuariosTabla">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Identificación</th>
+                <th>Correo</th>
+                <th>Especialización</th>
+                <th>Disponibilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        fetch('http://localhost:3000/users')
+        .then(response => response.json())
+        .then(usuarios => {
+            const tbody = document.querySelector('#usuariosTabla tbody');
+
+            usuarios.forEach(usuario => {
+                const fila = document.createElement('tr');
+
+                fila.innerHTML = `
+                    <td>${usuario.nombres} ${usuario.apellidos}</td>
+                    <td>${usuario.Identificacion}</td>
+                    <td>${usuario.correo}</td>
+                    <td>${usuario.especializacion}</td>
+                    <td>${usuario.disponibilidad}</td>
+                `;
+
+                tbody.appendChild(fila);
+            });
+        })
+        .catch(error => {
+            console.error('Error al cargar los usuarios:', error);
+            alert('Hubo un problema al cargar los datos.');
+        });
+    </script>
+</body>
+</html>

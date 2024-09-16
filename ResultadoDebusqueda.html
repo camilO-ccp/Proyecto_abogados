@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Búsqueda</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .resultado {
+            background-color: #424242;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #2a2a2a;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <div class="resultado">
+        <h1>Resultados de Búsqueda</h1>
+        <table id="usuariosTabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Identificación</th>
+                    <th>Correo</th>
+                    <th>Especialización</th>
+                    <th>Disponibilidad</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const especializacionSeleccionada = localStorage.getItem('especializacionSeleccionada');
+            
+            if (!especializacionSeleccionada) {
+                document.querySelector('.resultado').innerHTML = 'No se ha seleccionado ninguna especialización.';
+                return;
+            }
+
+            // Hacer una solicitud GET al archivo JSON
+            fetch('http://localhost:3000/users')  // Reemplaza con la URL correcta de tu JSON
+            .then(response => response.json())
+            .then(usuarios => {
+                const tbody = document.querySelector('#usuariosTabla tbody');
+
+                // Filtrar los usuarios según la especialización seleccionada
+                const usuariosFiltrados = usuarios.filter(usuario => usuario.especializacion === especializacionSeleccionada);
+
+                if (usuariosFiltrados.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5">No se encontraron usuarios con la especialización seleccionada.</td></tr>';
+                } else {
+                    // Iterar sobre los usuarios filtrados y agregarlos a la tabla
+                    usuariosFiltrados.forEach(usuario => {
+                        const fila = document.createElement('tr');
+
+                        fila.innerHTML = `
+                            <td>${usuario.nombres} ${usuario.apellidos}</td>
+                            <td>${usuario.Identificacion}</td>
+                            <td>${usuario.correo}</td>
+                            <td>${usuario.especializacion}</td>
+                            <td>${usuario.disponibilidad}</td>
+                        `;
+
+                        tbody.appendChild(fila);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar los usuarios:', error);
+                document.querySelector('.resultado').innerHTML = 'Hubo un problema al cargar los datos.';
+            });
+
+            // Limpiar el valor del localStorage después de mostrar los resultados
+            localStorage.removeItem('especializacionSeleccionada');
+        });
+    </script>
+</body>
+</html>

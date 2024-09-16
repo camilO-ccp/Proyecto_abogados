@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="RegistroAbogados.js"></script>
+    <link rel="stylesheet" href="registroabogados.css">
+    <title>Registro Abogado</title>
+</head>
+<body>
+    <section class="form-register">
+        <h1>Formulario de Registro</h1>
+
+        <p>Contacto:</p>
+        <div class="input-group">
+            <input class="controls" type="text" id="nombres" placeholder="Ingrese su nombre">
+            <input class="controls" type="text" id="apellidos" placeholder="Ingrese su apellido">
+        </div>
+        <div class="input-group">
+            <input class="controls" type="number" id="Identificacion" placeholder="Identificacion">
+            <input class="controls" type="number" id="numero" placeholder="Numero de contacto">
+            <input class="controls" type="text" id="correo" placeholder="Gmail">
+        </div>
+
+        <p>Referencias:</p>
+        <div class="input-group">
+            <input class="controls" type="text" id="firma1" placeholder="Nombre de la firma">
+            <input class="controls" type="number" id="numero1" placeholder="Numero de contacto">
+        </div>
+        <div class="input-group">
+            <input class="controls" type="text" id="firma2" placeholder="Nombre de la firma">
+            <input class="controls" type="number" id="numero2" placeholder="Numero de contacto">
+        </div>
+
+        <p>Perfiles detallados:</p>
+        <div class="input-group">
+            <input class="controls" type="text" id="exprof" placeholder="Experiencia profesional">
+            <select class="controls" id="especializacion">
+                <option value="">Seleccione una opción</option>
+                <option value="penal">Derecho Penal</option>
+                <option value="civil">Derecho Civil</option>
+                <option value="laboral">Derecho Laboral</option>
+                <option value="familiar">Derecho Familiar</option>
+                <option value="mercantil">Derecho Mercantil</option>
+            </select>
+            <input class="controls" type="text" id="disponibilidad" placeholder="Disponibilidad">
+            <input class="controls" type="text" id="trayectoria" placeholder="Trayectoria">
+            <input class="controls" type="text" id="infoac" placeholder="Información académica">
+        </div>
+
+        <button onclick="registrarBtn()">Registrar</button>
+    </section>
+</body>
+</html>
